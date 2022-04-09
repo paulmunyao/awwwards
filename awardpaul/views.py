@@ -20,3 +20,6 @@ def register(request):
         form = RegisterForm()
     return render(request, 'registration/register.html', {'form': form})
 
+def display(request):
+    return render(request,'display.html')    
+
