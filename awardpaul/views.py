@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login,logout
-from .forms import RegisterForm
+from .forms import RegisterForm,ProjectForm
 
 # Create your views here.
 
@@ -21,5 +21,6 @@ def register(request):
     return render(request, 'registration/register.html', {'form': form})
 
 def display(request):
-    return render(request,'display.html')    
+        
+        return render(request,'display.html')    
 
