@@ -22,5 +22,5 @@ def register(request):
 
 def display(request):
         form = ProjectForm()
-        return render(request,'display.html')    
+        return render(request,'display.html',{'form':form})    
 
