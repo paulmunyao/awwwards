@@ -37,5 +37,5 @@ def register(request):
     return render(request, 'registration/register.html', {'form': form})
 
 
-def logout(request):
-    return redirect('index') 
+# def logout(request):
+#     return redirect('index') 
