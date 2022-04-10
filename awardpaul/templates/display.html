@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<h1>Projects</h1>
+{% for display in post%}
+<div class="row">
+    <div class="col-md-4">
+        <img src="{{display.image}}" alt="{{display.title}}" class="img-responsive">
+    </div>
+    <div class="col-md-8">
+        <h2>{{display.title}}</h2>
+        <p>{{display.description}}</p>
+        <p>{{display.link}}</p>
+    </div>
+</div>
+{%endfor%}
+{%endblock%}
+
+
+{%endblock%}
