@@ -23,10 +23,11 @@ def register(request):
 
 
 def post(request):
-    post = Project.objects.all()
-    return render(request, 'display.html', {'post': post})
+    form = ProjectForm()
+    return render(request, 'post.html', {'form': form})
 
 def display(request):
+    post = Project.objects.all()
     return render(request, 'display.html')
 
 
