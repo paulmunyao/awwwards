@@ -25,6 +25,9 @@ def post(request):
     post = ProjectForm.objects.all()
     return render(request, 'display.html', {'post': post})
 
+def display(request):
+    return render(request, 'display.html')
+
 
 
 
