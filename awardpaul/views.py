@@ -28,7 +28,7 @@ def post(request):
 
 def display(request):
     post = Project.objects.all()
-    return render(request, 'display.html', {'post': post})
+    return render(request, 'display.html', {'post': post})  
 
 
 
