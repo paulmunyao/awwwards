@@ -1,8 +1,7 @@
 {%extends 'base.html'%}
 {%block content%}
 {%load static%}
-
-<div class="nav">
+<!-- <div class="nav">
     <input type="checkbox">
     <span></span>
     <span></span>
@@ -13,9 +12,9 @@
         <li><a href="#">blog</a></li>
         <li><a href="#">contactos</a></li>
     </div>
-</div>
+</div> -->
 
-<!-- <h1>Projects</h1>
+ <!-- <h1>Projects</h1> -->
 {% for display in post%}
 <div class="container">
     <div class="row">
@@ -27,5 +26,5 @@
         <p><a href="{{display.link}}">View Project</a></p>
     </div>
 </div>
-{%endfor%} -->
+{%endfor%}
 {%endblock%}
