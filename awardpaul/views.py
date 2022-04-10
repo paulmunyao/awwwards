@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from .forms import RegisterForm, ProjectForm
+from .models import Project
 
 # Create your views here.
 
@@ -22,7 +23,7 @@ def register(request):
 
 
 def post(request):
-    post = ProjectForm.objects.all()
+    post = Project.objects.all()
     return render(request, 'display.html', {'post': post})
 
 def display(request):
