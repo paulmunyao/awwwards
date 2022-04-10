@@ -31,5 +31,6 @@ def post(request):
     return render(request,'post.html',{'form':form}) 
 
 def display(request):
+    posts = ProjectForm.objects.all()
     return render(request, 'display.html')    
 
