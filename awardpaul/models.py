@@ -9,12 +9,18 @@ class Project(models.Model):
     image = CloudinaryField('image')
     description = models.TextField(max_length=100)
     link = models.URLField(max_length=100)
-    user = models.ForeignKey(User, on_delete=models.CASCADE,default=None)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE , default=None)
+    image = CloudinaryField('image')
+    bio = models.TextField(max_length=100)
+    contact = models.TextField(max_length=100)
+
 class Rate(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE )
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     design = models.IntegerField()
     usability = models.IntegerField()
     content = models.IntegerField()
     overall = models.IntegerField()
-   
