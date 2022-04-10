@@ -20,13 +20,16 @@ def register(request):
         form = RegisterForm()
     return render(request, 'registration/register.html', {'form': form})
 
-def display(request):
+def post(request):
     if request.method == 'POST':
         form = ProjectForm()
         if form.is_valid():
             form.save()
-            return redirect('post')
+            return redirect('display')
     else:
         form = ProjectForm()
-    return render(request,'display.html',{'form':form}) 
+    return render(request,'post.html',{'form':form}) 
+
+def display(request):
+    return render(request, 'display.html')    
 
