@@ -301,3 +301,8 @@ h1 {
     font-size: 8vh;
   }
 }
+
+.img-responsive{
+  height:200px;
+  width:200px;
+}
