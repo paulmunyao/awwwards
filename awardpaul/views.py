@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm, ProjectForm
-from .models import Project
+from .models import Project, Profile, Rate
 
 # Create your views here.
 
@@ -35,7 +35,7 @@ def post(request):
         'user': request.user,
     }
     form = ProjectForm()
-    return render(request, 'post.html',context, {'form': form})
+    return render(request, 'post.html', context, {'form': form})
 
 
 @login_required(login_url='registration/login/')
@@ -49,4 +49,20 @@ def rate(request, id):
         'user': request.user,
     }
     post = Project.objects.get(id=id)
-    return render(request, 'rate.html',context, {'post': post}) 
+
+    if request.method == 'POST':
+        form = Rate(request.POST)
+        if form.is_valid():
+            rate = form.save(commit=False)
+            rate.user = User
+            rate.project = Project
+            rate.save()
+            design = form.cleaned_data['design']
+            usability = form.cleaned_data['usability']
+            content = form.cleaned_data['content']
+            overall = (design + usability + content) / 3
+            rate = Rate(user=request.user, project=post, design=design,
+                        usability=usability, content=content, overall=overall)
+            rate.save()
+            return redirect('profile')
+    return render(request, 'rate.html', context, {'post': post})
