@@ -27,12 +27,13 @@ def post(request):
     form = ProjectForm()
     return render(request, 'post.html', {'form': form})
 
-@login_required(login_url='login/')
+@login_required(login_url='registration/login/')
 def display(request):
     post = Project.objects.all()
     return render(request, 'display.html', {'post': post})  
 
-
+def logout_view(request):
+    logout(request)
 
 
       
