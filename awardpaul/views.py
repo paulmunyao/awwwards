@@ -26,7 +26,7 @@ def profile(request):
     context = {
         'user': request.user,
     }
-    return render(request, 'profile.html')    
+    return render(request, 'profile.html',context)  
 
 
 def post(request):
