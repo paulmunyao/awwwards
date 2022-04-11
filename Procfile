@@ -1,1 +1,1 @@
-web: gunicorn awwwardspaul.wsgi
+web: gunicorn awards.wsgi
