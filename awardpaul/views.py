@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm, ProjectForm
 from .models import Project, Profile, Rate
+#from django.template.loader import get_template
+from django.template import loader
 
 # Create your views here.
 
@@ -58,3 +60,5 @@ def rate(request, id):
             return redirect('display', id)
     else:
         form = Rate()
+
+    template = loader.get_template('rate.html')    
