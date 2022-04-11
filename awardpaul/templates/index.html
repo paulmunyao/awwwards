@@ -1,15 +1,21 @@
 {%extends 'base.html'%}
 {%block content%}
 {%load static%}
+<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
+<label for="menu-icon"></label>
+<nav class="nav">
+	<ul class="pt-5">
+		<li><a href="display">Work</a></li>
+		<li><a href="login">Login</a></li>
+		<li><a href="register">Register</a></li>
+		
+	</ul>
+</nav>
 
-<body style="overflow: hidden; background: #272727;">
-	<nav class="navMenu">
-		<a href="">Home</a>
-		<a href="display">Work</a>
-		<a href="login">Login</a>
-		<a href="register">Register</a>
-		<div class="dot"></div>
-	</nav>
-</body>
+<div class="section-center">
+	<h1 class="mb-0">Awwwards</h1>
+	<h1 class="mb-0">Art Unccensored</h1>
+</div>
+
 
 {%endblock%}

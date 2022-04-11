@@ -1,20 +1,18 @@
 {%extends 'base.html'%}
 {%block content%}
 {%load static%}
-<div class="nav">
-    <input type="checkbox">
-    <span></span>
-    <span></span>
-    <div class="menu">
-        <li><a href="#">home</a></li>
-        <li><a href="profile">Pofile</a></li>
-        <li><a href="#">cursos</a></li>
-        <li><a href="#">blog</a></li>
-        <li><a href="logout">logout</a></li>
-    </div>
-</div>
 
- <!-- <h1>Projects</h1>
+<body style="overflow: hidden; background: #272727;">
+    <nav class="navMen">
+        <a href="">Home</a>
+        <a href="display">Work</a>
+        <a href="login">Login</a>
+        <a href="register">Register</a>
+        <div class="dot"></div>
+    </nav>
+</body>
+
+<h1>Projects</h1>
 {% for display in post%}
 <div class="container">
     <div class="row">
@@ -27,5 +25,5 @@
         <p>{{display.user}}</p>
     </div>
 </div>
-{%endfor%} -->
+{%endfor%}
 {%endblock%}
