@@ -1,6 +1,8 @@
 {%extends 'base.html'%}
 {%block content%}
 {%load static%}
+{%if user.is_authenticated%}
+<h2>{%block title%}Profile{%endblock%}</h2>
 
 
 {%endblock%}
