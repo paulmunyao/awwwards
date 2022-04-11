@@ -33,7 +33,10 @@ RATE_CHOICES = [
 class Rate(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE )
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    design = models.IntegerField()
-    usability = models.IntegerField()
-    content = models.IntegerField()
-    overall = models.IntegerField()
+    design = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
+    usability = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
+    content = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
+    # overall = models.IntegerField()
+
+    def __str__(self):
+        return self.user.username
