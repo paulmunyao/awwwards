@@ -18,6 +18,7 @@ class ProjectForm(ModelForm):
         fields = ['title', 'image', 'description', 'link']  
 
 class RateForm(ModelForm):
+    rate = forms.ChoiceField(choices=RATE_CHOICES,widget=forms.Select(),required=True)
     class Meta:
         model = Rate
         fields = ['design', 'usability', 'content']        
