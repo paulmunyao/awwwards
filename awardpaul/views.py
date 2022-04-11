@@ -22,23 +22,31 @@ def register(request):
         form = RegisterForm()
     return render(request, 'registration/register.html', {'form': form})
 
+
 def profile(request):
     context = {
         'user': request.user,
     }
-    return render(request, 'profile.html',context)  
+    return render(request, 'profile.html', context)
 
 
 def post(request):
+    context = {
+        'user': request.user,
+    }
     form = ProjectForm()
-    return render(request, 'post.html', {'form': form})
+    return render(request, 'post.html',context, {'form': form})
+
 
 @login_required(login_url='registration/login/')
-def display(request):
+def display(request, id):
     post = Project.objects.all()
-    return render(request, 'display.html', {'post': post})  
+    return render(request, 'display.html', {'post': post})
 
 
-
-      
-
+def rate(request, id):
+    context = {
+        'user': request.user,
+    }
+    post = Project.objects.get(id=id)
+    return render(request, 'rate.html',context, {'post': post}) 
