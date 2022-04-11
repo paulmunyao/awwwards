@@ -45,17 +45,16 @@ def display(request, id):
 
 
 def rate(request, id):
-    context = {
-        'user': request.user,
-    }
     post = Project.objects.get(id=id)
-
+    user=request.user
+    
     if request.method == 'POST':
         form = Rate(request.POST)
         if form.is_valid():
             rate = form.save(commit=False)
-            rate.user = User
-            rate.project = Project
+            rate.user = user
+            rate.project = post
             rate.save()
-            return redirect('profile')
-    return render(request, 'rate.html', context, {'post': post})
+            return redirect('display', id)
+    else:
+        form = Rate()
