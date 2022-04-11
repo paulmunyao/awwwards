@@ -22,6 +22,9 @@ def register(request):
         form = RegisterForm()
     return render(request, 'registration/register.html', {'form': form})
 
+def profile(request):
+    return render(request, 'profile.html')    
+
 
 def post(request):
     form = ProjectForm()
@@ -32,11 +35,6 @@ def display(request):
     post = Project.objects.all()
     return render(request, 'display.html', {'post': post})  
 
-def profile(request):
-    return render(request, 'profile.html')    
-
-# def logout_view(request):
-#     logout(request)
 
 
       
