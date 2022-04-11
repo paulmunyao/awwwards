@@ -3,6 +3,11 @@
 {%load static%}
 {%if user.is_authenticated%}
 <h2>{%block title%}Profile{%endblock%}</h2>
+<p>Username: {{user}}</p>
+<p>Email: {{user.email}}</p>
+<p>Bio: {{user.Bio}}</p>
+<p>Image: {{user.image}}</p>
 
-
+{%else%}
+<p>Kindly login in to view your details</p>
 {%endblock%}
