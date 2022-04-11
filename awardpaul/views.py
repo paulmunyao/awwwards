@@ -35,8 +35,8 @@ def display(request):
 def profile(request):
     return render(request, 'profile.html')    
 
-def logout_view(request):
-    logout(request)
+# def logout_view(request):
+#     logout(request)
 
 
       
