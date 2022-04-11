@@ -57,12 +57,5 @@ def rate(request, id):
             rate.user = User
             rate.project = Project
             rate.save()
-            design = form.cleaned_data['design']
-            usability = form.cleaned_data['usability']
-            content = form.cleaned_data['content']
-            overall = (design + usability + content) / 3
-            rate = Rate(user=request.user, project=post, design=design,
-                        usability=usability, content=content, overall=overall)
-            rate.save()
             return redirect('profile')
     return render(request, 'rate.html', context, {'post': post})
