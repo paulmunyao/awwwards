@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm, ProjectForm
 from .models import Project
 
@@ -26,6 +27,7 @@ def post(request):
     form = ProjectForm()
     return render(request, 'post.html', {'form': form})
 
+@login_required(login_url='login/')
 def display(request):
     post = Project.objects.all()
     return render(request, 'display.html', {'post': post})  
