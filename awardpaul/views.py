@@ -32,6 +32,9 @@ def display(request):
     post = Project.objects.all()
     return render(request, 'display.html', {'post': post})  
 
+def profile(request):
+    return render(request, 'profile.html')    
+
 def logout_view(request):
     logout(request)
 
