@@ -1,5 +1,10 @@
 .sign{
   font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+.sub{
+  border-radius: 25px;
 }
 
 body{
