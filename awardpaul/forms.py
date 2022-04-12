@@ -23,11 +23,11 @@ class RegisterForm(UserCreationForm):
 
 class ProjectForm(ModelForm):
     title = forms.CharField(widget=forms.TextInput(
-        attrs={'placeholder': 'Username', 'style': 'width:300px;border-radius:25px;'}))
+        attrs={'placeholder': 'Title', 'style': 'width:300px;border-radius:25px;'}))
     description = forms.CharField(widget=forms.TextInput(
-        attrs={'placeholder': 'Password', 'style': 'width: 300px;border-radius:25px;'}))
+        attrs={'placeholder': 'DEscription', 'style': 'width: 300px;border-radius:25px;'}))
     link = forms.CharField(widget=forms.URLInput(
-        attrs={'placeholder': 'Confirm Password', 'style': 'width: 300px;border-radius:25px;'}))
+        attrs={'placeholder': 'Link', 'style': 'width: 300px;border-radius:25px;'}))
 
     class Meta:
         model = Project
@@ -36,9 +36,9 @@ class ProjectForm(ModelForm):
 
 class ProfileForm(ModelForm):
     bio = forms.CharField(widget=forms.TextInput(
-        attrs={'placeholder': 'Username', 'style': 'width:300px;border-radius:25px;'}))
+        attrs={'placeholder': 'Bio', 'style': 'width:300px;border-radius:25px;'}))
     contact = forms.CharField(widget=forms.TextInput(
-        attrs={'placeholder': 'Password', 'style': 'width: 300px;border-radius:25px;'}))
+        attrs={'placeholder': 'contact', 'style': 'width: 300px;border-radius:25px;'}))
     
 
     class Meta:
