@@ -40,8 +40,20 @@ def display(request):
     return render(request, 'display.html', {'post': post})
 
 
-def rate(request): 
-    form = RateForm()
-    return render(request, 'rate.html', {'form': form, 'rate': RATE_CHOICES})
+def rate(request,id):
+    current_user = request.user
+    project = Project.objects.get(id=id)
+    rates = Rate.objects.filter(project=project,user=current_user)
+    if request.method == 'POST':
+        form = RateForm(request.POST)
+        if form.is_valid():
+            rate = form.save(commit=False)
+            rate.project = Project.objects.get(id=id)
+            rate.user = request.user
+            rate.save()
+            return redirect('display')
+    else:
+        form = RateForm()
+    return render(request, 'rate.html', {'form': form, 'rate': RATE_CHOICES, 'project': project, 'rates': rates})
   
 
