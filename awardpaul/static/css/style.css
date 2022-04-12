@@ -14,8 +14,13 @@
   padding-top: 150px;
 }
 
-.subm{
-    border-radius: 25px;
+.subm {
+  border-radius: 25px;
+}
+
+.pro {
+  font-family: "Rubik Wet Paint", cursive;
+  margin-top: 50px;
 }
 
 body {
