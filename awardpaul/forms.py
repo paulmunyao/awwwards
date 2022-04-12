@@ -7,11 +7,11 @@ from django.forms import TextInput, EmailInput
 
 
 class RegisterForm(UserCreationForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username', 'style': 'width:1000px;'}))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder' :'Email', 'style': 'width: 1000px;'}))
-    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'style': 'width: 1000px;'}))
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'style': 'width: 1000px;'}))
-    
+    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username', 'style': 'width:300px;border-radius:25px;'}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder' :'Email', 'style': 'width: 350px;border-radius:25px;'}))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'style': 'width: 300px;border-radius:25px;'}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'style': 'width: 300px;border-radius:25px;'}))
+
 
 
     class Meta:
