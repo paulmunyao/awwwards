@@ -15,7 +15,13 @@ class RegisterForm(UserCreationForm):
 class ProjectForm(ModelForm):
     class Meta:
         model = Project
-        fields = ['title', 'image', 'description', 'link']  
+        fields = ['title', 'image', 'description', 'link'] 
+
+class ProfileForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['image', 'bio', 'contact']
+
 
 class RateForm(ModelForm):
     rate = forms.ChoiceField(choices=RATE_CHOICES,widget=forms.Select(),required=True)

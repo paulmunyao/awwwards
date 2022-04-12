@@ -36,7 +36,6 @@ class Rate(models.Model):
     design = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
     usability = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
     content = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
-    # overall = models.IntegerField()
 
     def __str__(self):
         return self.user.username

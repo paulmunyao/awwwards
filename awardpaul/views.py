@@ -28,19 +28,17 @@ def profile(request):
     context = {
         'user': request.user,
     }
+    form = Profile
     return render(request, 'profile.html', context)
 
 
 def post(request):
-    context = {
-        'user': request.user,
-    }
     form = ProjectForm()
-    return render(request, 'post.html', context, {'form': form})
+    return render(request, 'post.html',  {'form': form})
 
 
 @login_required(login_url='registration/login/')
-def display(request, id):
+def display(request):
     post = Project.objects.all()
     return render(request, 'display.html', {'post': post})
 
