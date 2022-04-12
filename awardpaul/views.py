@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect,HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import RegisterForm, ProjectForm
+from .forms import ProfileForm, RegisterForm, ProjectForm,ProfileForm
 from .models import Project, Profile, Rate
 from django.template import loader
 
@@ -25,11 +25,8 @@ def register(request):
 
 
 def profile(request):
-    context = {
-        'user': request.user,
-    }
-    form = Profile
-    return render(request, 'profile.html', context)
+    form = ProfileForm()
+    return render(request, 'profile.html', {'form': form})
 
 
 def post(request):
