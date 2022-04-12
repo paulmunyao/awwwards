@@ -35,6 +35,12 @@ class ProjectForm(ModelForm):
 
 
 class ProfileForm(ModelForm):
+    bio = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder': 'Username', 'style': 'width:300px;border-radius:25px;'}))
+    contact = forms.CharField(widget=forms.PasswordInput(
+        attrs={'placeholder': 'Password', 'style': 'width: 300px;border-radius:25px;'}))
+    
+
     class Meta:
         model = Profile
         fields = ['image', 'bio', 'contact']

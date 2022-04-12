@@ -2,14 +2,16 @@
 {%block content%}
 {%load static%}
 {%if user.is_authenticated%}
-<h2>{%block title%}Profile{%endblock%}</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Submit</button>
-</form>
+<div class="file">
+    <h1 class="prof">Profile</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="submission" type="submit">Submit</button>
+    </form>
 
-<p>Kindly login in to view your details</p>
+    <p>Kindly login in to view your details</p>
+</div>
 
 {%endif%}
 {%endblock%}

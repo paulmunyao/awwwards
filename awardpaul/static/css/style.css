@@ -28,8 +28,29 @@
   padding-top: -300px;
 }
 
+.mit {
+  border-radius: 25px;
+}
+
 .poster {
   font-family: "Playfair Display", serif;
+  text-align: center;
+  padding-top: 150px;
+}
+
+.submission{
+  border-radius: 25px;
+}
+
+.prof{
+  font-family: "Rubik Wet Paint", cursive;
+  padding-top: -300px;
+  text-align: center;
+  /* padding-top: 150px; */
+}
+
+.file{
+   font-family: "Playfair Display", serif;
   text-align: center;
   padding-top: 150px;
 }
