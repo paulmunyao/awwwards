@@ -1,10 +1,13 @@
 {%extends 'base.html'%}
 {%block content%}
 {%load static%}
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Submit</button>
-</form>
+<div class="poster">
+    <h1 class="pos">Posts</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
 
 {%endblock%}

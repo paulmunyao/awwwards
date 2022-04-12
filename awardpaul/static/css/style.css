@@ -23,6 +23,17 @@
   padding-top: -300px;
 }
 
+.pos {
+  font-family: "Rubik Wet Paint", cursive;
+  padding-top: -300px;
+}
+
+.poster {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  padding-top: 150px;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;

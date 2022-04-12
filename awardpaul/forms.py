@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import TextInput, EmailInput
 
+
 class RegisterForm(UserCreationForm):
     username = forms.CharField(widget=forms.TextInput(
         attrs={'placeholder': 'Username', 'style': 'width:300px;border-radius:25px;'}))
@@ -21,6 +22,13 @@ class RegisterForm(UserCreationForm):
 
 
 class ProjectForm(ModelForm):
+    title = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder': 'Username', 'style': 'width:300px;border-radius:25px;'}))
+    description = forms.CharField(widget=forms.PasswordInput(
+        attrs={'placeholder': 'Password', 'style': 'width: 300px;border-radius:25px;'}))
+    link = forms.CharField(widget=forms.PasswordInput(
+        attrs={'placeholder': 'Confirm Password', 'style': 'width: 300px;border-radius:25px;'}))
+
     class Meta:
         model = Project
         fields = ['title', 'image', 'description', 'link']
