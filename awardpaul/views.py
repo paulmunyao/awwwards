@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect,HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import ProfileForm, RegisterForm, ProjectForm,ProfileForm
+from .forms import ProfileForm, RegisterForm, ProjectForm,ProfileForm,RateForm,RATE_CHOICES
 from .models import Project, Profile, Rate
 from django.template import loader
 
@@ -40,24 +40,8 @@ def display(request):
     return render(request, 'display.html', {'post': post})
 
 
-def rate(request, id):
-    post = Project.objects.get(id=id)
-    user=request.user
-    
-    if request.method == 'POST':
-        form = Rate(request.POST)
-        if form.is_valid():
-            rate = form.save(commit=False)
-            rate.user = user
-            rate.project = post
-            rate.save()
-            return redirect('display', id)
-    else:
-        form = Rate()
-    template = loader.get_template('rate.html')
-    context = {
-        'form': form,
-        'post': post,
-    } 
-    return HttpResponse(template.render(context, request))
+def rate(request): 
+    form = RateForm()
+    return render(request, 'rate.html', {'form': form, 'rate': RATE_CHOICES})
+  
 
