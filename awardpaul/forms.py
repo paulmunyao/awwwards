@@ -3,10 +3,16 @@ from django.forms import ModelForm
 from .models import Project, Profile, Rate, RATE_CHOICES
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.forms import TextInput, EmailInput
 
 
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username', 'style': 'width:1000px;'}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder' :'Email', 'style': 'width: 1000px;'}))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'style': 'width: 1000px;'}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'style': 'width: 1000px;'}))
+    
+
 
     class Meta:
         model = User
