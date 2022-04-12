@@ -1,10 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm, ProjectForm
 from .models import Project, Profile, Rate
-#from django.template.loader import get_template
 from django.template import loader
 
 # Create your views here.
@@ -60,5 +59,10 @@ def rate(request, id):
             return redirect('display', id)
     else:
         form = Rate()
+    template = loader.get_template('rate.html')
+    context = {
+        'form': form,
+        'post': post,
+    } 
+    return HttpResponse(template.render(context, request))
 
-    template = loader.get_template('rate.html')    
