@@ -19,7 +19,16 @@ class ProfileTestCase(TestCase):
     def test_profile_content(self):
         profile = Profile.objects.get(id=1)
         expected_object_name = f'{profile.user}'
-        self.assertEqual(expected_object_name, 'test')       
+        self.assertEqual(expected_object_name, 'test')   
+
+class RateTestCase(TestCase):
+    def setUp(self):
+        Rate.objects.create(user='test', project='test', design='test', usability='test', content='test')
+
+    def test_rate_content(self):
+        rate = Rate.objects.get(id=1)
+        expected_object_name = f'{rate.user}'
+        self.assertEqual(expected_object_name, 'test')    
         
 
 
