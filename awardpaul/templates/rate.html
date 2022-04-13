@@ -1,21 +1,22 @@
 {%extends 'base.html'%}
 {%block content%}
+<div id="mark">
+    <h1 class="rates">{%block title%}Ratings{%endblock%}</h1>
+    <div class="ratings">
+        <h3>Viewer Ratings</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Submit</button>
+        </form>
 
-<h1>{%block title%}Ratings{%endblock%}</h1>
-<h3>Viewer Ratings</h3>
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Submit</button>
-</form>
-
-{% if rates %}
-{% for rate in rates %}
-<p>Design:{{rate.design}}</p>
-<p>Content:{{rate.content}}</p>
-<p>Usability:{{rate.usability}}</p>
-
+        {% if rates %}
+        {% for rate in rates %}
+        <p>Design:{{rate.design}}</p>
+        <p>Content:{{rate.content}}</p>
+        <p>Usability:{{rate.usability}}</p>
+    </div>
+</div>
 {% endfor %}
 {% endif %}
 {% endblock %}
-

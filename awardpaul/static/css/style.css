@@ -38,19 +38,32 @@
   padding-top: 150px;
 }
 
-.submission{
+.submission {
   border-radius: 25px;
 }
 
-.prof{
+.prof {
   font-family: "Rubik Wet Paint", cursive;
   padding-top: -300px;
   text-align: center;
-  /* padding-top: 150px; */
 }
 
-.file{
-   font-family: "Playfair Display", serif;
+#mark {
+  text-align: center;
+}
+
+.rates {
+  font-family: "Rubik Wet Paint", cursive;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.ratings{
+  font-family: "Playfair Display", serif;
+}
+
+.file {
+  font-family: "Playfair Display", serif;
   text-align: center;
   padding-top: 150px;
 }
