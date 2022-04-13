@@ -18,11 +18,6 @@
   border-radius: 25px;
 }
 
-/* #pro {
-  
-  padding-top: -300px;
-} */
-
 .pos {
   font-family: "Rubik Wet Paint", cursive;
   padding-top: -300px;
@@ -75,7 +70,7 @@ body {
   line-height: 1.7;
   color: #ececee;
   background-color: #1f2029;
-  /* overflow: hidden; */
+  overflow-x: hidden;
   /* background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg'); */
   background-position: center;
   background-repeat: repeat;
