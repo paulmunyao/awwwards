@@ -1,11 +1,12 @@
 from django.test import TestCase
-from .models import Project, Profile, Rate
+from .models import Project, Profile, Rate,User
 
 # Create your tests here.
 
 class ProjectTestCase(TestCase):
     def setUp(self):
-        Project.objects.create(title='test', description='test', link='test', image='test')
+        self.user = User.objects.create(username='test')
+        self.project = Project.objects.create(title='test', description='test', link='test', user=self.user)
 
     def test_project_content(self):
         project = Project.objects.get(id=1)
@@ -14,7 +15,8 @@ class ProjectTestCase(TestCase):
 
 class ProfileTestCase(TestCase):
     def setUp(self):
-        Profile.objects.create(user='test', bio='test', contact='test', image='test')
+        self.user = User.objects.create(username='test')
+        self.profile = Profile.objects.create(user=self.user, bio='test', contact='test')
 
     def test_profile_content(self):
         profile = Profile.objects.get(id=1)
@@ -23,7 +25,9 @@ class ProfileTestCase(TestCase):
 
 class RateTestCase(TestCase):
     def setUp(self):
-        Rate.objects.create(user='test', project='test', design='test', usability='test', content='test')
+        self.user = User.objects.create(username='test')
+        self.project = Project.objects.create(title='test', description='test', link='test', user=self.user)
+        self.rate = Rate.objects.create(user=self.user, project=self.project, design=1, usability=1, content=1)
 
     def test_rate_content(self):
         rate = Rate.objects.get(id=1)
