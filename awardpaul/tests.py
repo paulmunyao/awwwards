@@ -11,6 +11,15 @@ class ProjectTestCase(TestCase):
         project = Project.objects.get(id=1)
         expected_object_name = f'{project.title}'
         self.assertEqual(expected_object_name, 'test')
+
+class ProfileTestCase(TestCase):
+    def setUp(self):
+        Profile.objects.create(user='test', bio='test', contact='test', image='test')
+
+    def test_profile_content(self):
+        profile = Profile.objects.get(id=1)
+        expected_object_name = f'{profile.user}'
+        self.assertEqual(expected_object_name, 'test')       
         
 
 
