@@ -9,7 +9,7 @@ class Project(models.Model):
     image = CloudinaryField('image')
     description = models.TextField(max_length=100)
     link = models.URLField(max_length=100)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None,null=True, blank=True)
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE , default=None)
@@ -31,7 +31,7 @@ RATE_CHOICES = [
 ]
 
 class Rate(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE )
+    user = models.ForeignKey(User, on_delete=models.CASCADE ,null=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     design = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
     usability = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
