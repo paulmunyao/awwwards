@@ -12,29 +12,28 @@
 <div class="pic">
     {% for display in post%}
     <div class="pic1">
-            <div class="col-md-4">
-                <img src="{{display.image.url}}" alt="{{display.title}}" class="img-responsive">
-            </div>
-            <h2>{{display.title}}</h2>
-            <p>{{display.description}}</p>
-            <p><a href="{{display.link}}">View Project</a></p>
-            <p>{{display.user}}</p>
-
-    <a href="rate/{{display.id}}">Rate</a>
+        <div class="col-md-4">
+            <img src="{{display.image.url}}" alt="{{display.title}}" class="img-responsive">
+        </div>
+        <h2>{{display.title}}</h2>
+        <p>{{display.description}}</p>
+        <p><a href="{{display.link}}">View Project</a></p>
+        <p>{{display.user}}</p>
+        <a href="rate/{{display.id}}">Rate</a>
     </div>
     {%endfor%}
 </div>
 <style>
-    .pic{
-        margin-top:200px;
-        padding:0 10rem;
+    .pic {
+        margin-top: 200px;
+        padding: 0 10rem;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-
+        font-family: "Playfair Display", serif;
     }
 
-    .pic1{
+    .pic1 {
         margin: 4rem;
         padding: 1rem;
     }
